@@ -1,0 +1,18 @@
+#setup your app
+
+path=$(ls -A 'vendor/')
+
+sudo systemctl restart docker
+
+docker-compose up -d
+
+if [[ ! -z "$path" ]]; then
+    echo "vendor is not empty"
+    docker-compose run --rm php rm -r vendor/
+fi
+
+docker-compose run --rm php composer install
+
+sudo chmod -R 777 .
+
+echo "process finished"
