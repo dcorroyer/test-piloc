@@ -1,4 +1,4 @@
-# Technical test
+# API with Laravel 9 and MySQL
 
 You need to have **docker** installed on your computer to run the project.
 
